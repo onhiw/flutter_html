@@ -21,10 +21,7 @@ CustomRender iframeRender({NavigationDelegate? navigationDelegate}) =>
           child: WebView(
             initialUrl: context.tree.element?.attributes['src'],
             key: key,
-            javascriptMode:
-                sandboxMode == null || sandboxMode == "allow-scripts"
-                    ? JavascriptMode.unrestricted
-                    : JavascriptMode.disabled,
+            javascriptMode: JavascriptMode.unrestricted,
             navigationDelegate: navigationDelegate,
             gestureRecognizers: {
               Factory<VerticalDragGestureRecognizer>(
